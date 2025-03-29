@@ -31,7 +31,6 @@ class Api::V1::MenuControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "Should return 404 if not Menu is found" do
-
     get api_v1_menu_url(1)
     body = JSON.parse(@response.body)
 
