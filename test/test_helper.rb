@@ -11,5 +11,8 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    # include factory_bot_rails methods to test
+    include FactoryBot::Syntax::Methods
   end
 end
