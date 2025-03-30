@@ -10,15 +10,9 @@ class MenuItemTest < ActiveSupport::TestCase
     end
   end
 
-  test "Cannot create a MenuItem without a Menu" do
-    menu_item = build(:menu_item, menu: nil)
-
-    assert_not menu_item.save
-  end
-
-  test "A MenuItem belongs to a Menu" do
+  test "A MenuItem has many Menus" do
     menu_item = create(:menu_item)
 
-    assert menu_item.menu
+    assert menu_item.menus
   end
 end
