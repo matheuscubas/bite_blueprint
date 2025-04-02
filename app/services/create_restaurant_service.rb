@@ -36,7 +36,7 @@ class CreateRestaurantService < ApplicationService
 
   def prepare_nested_attributes(restaurant_data:)
     Restaurant.new({
-                     name: begin restaurant_data[:name] rescue '' end,
+                     name: restaurant_data[:name],
                      menus_attributes: restaurant_data[:menus]&.map do |menu|
                        {
                          name: menu[:name],

@@ -43,19 +43,19 @@ module Api
       # Create Tests
       test "should creates restaurant with valid params" do
         valid_params = {
-          restaurants: [{
+          restaurants: [ {
                           name: "New Restaurant",
-                          menus: [{
+                          menus: [ {
                                     name: "Lunch",
-                                    menu_items: [{
+                                    menu_items: [ {
                                                    name: "Burger",
                                                    price: 9.99
-                                                 }]
-                                  }]
-                        }]
+                                                 } ]
+                                  } ]
+                        } ]
         }
 
-        assert_difference('Restaurant.count', 1) do
+        assert_difference("Restaurant.count", 1) do
           post api_v1_restaurant_index_url, params: valid_params, as: :json
         end
 
@@ -65,16 +65,16 @@ module Api
 
       test "POST create - returns error for invalid params" do
         invalid_params = {
-          restaurants: [{
+          restaurants: [ {
                           name: "",
-                          menus: [{
+                          menus: [ {
                                     name: "Lunch",
-                                    menu_items: [{
+                                    menu_items: [ {
                                                    name: "Burger",
                                                    price: 9.99
-                                                 }]
-                                  }]
-                        }]
+                                                 } ]
+                                  } ]
+                        } ]
         }
 
         post api_v1_restaurant_index_url, params: invalid_params, as: :json

@@ -6,7 +6,7 @@ class JsonValidator
     required: [ "name" ],
     properties: {
       name: {
-        type: "string",
+        type: "string"
       },
       description: {
         type: [ "string", "null" ]
@@ -22,7 +22,7 @@ class JsonValidator
           required: [ "name" ],
           properties: {
             name: {
-              type: "string",
+              type: "string"
             },
             description: {
               type: [ "string", "null" ]
@@ -35,11 +35,11 @@ class JsonValidator
                 required: [ "name", "price" ],
                 properties: {
                   name: {
-                    type: "string",
+                    type: "string"
                   },
                   price: {
                     type: [ "number", "string" ],
-                    pattern: "^\\d+(\\.\\d{1,2})?$",
+                    pattern: "^\\d+(\\.\\d{1,2})?$"
                   },
                   description: {
                     type: [ "string", "null" ]
