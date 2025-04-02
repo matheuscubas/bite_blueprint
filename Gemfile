@@ -40,6 +40,7 @@ gem "thruster", require: false
 # Decorators
 gem "representable"
 gem "multi_json"
+gem "json-schema"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -53,4 +54,5 @@ group :development, :test do
 
   gem "factory_bot_rails"
   gem "faker"
+  gem "pry-byebug"
 end
