@@ -6,4 +6,10 @@ FactoryBot.define do
     description { Faker::Restaurant.description }
     category { Faker::Restaurant.type }
   end
+
+  trait :with_menus do
+    after(:create) do |restaurant|
+      create_list(:menu, 2, restaurant: restaurant)
+    end
+  end
 end
