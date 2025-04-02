@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :menu_item do
-    name { Faker::Food.unique.dish  }
+    name { "#{Faker::Food.dish} - #{Faker::Food.ethnic_category} way" }
     description  { Faker::Food.description }
     price { Faker::Number.number(digits: 4) }
   end

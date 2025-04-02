@@ -36,13 +36,13 @@ module Api
                      end
 
                      { restaurants: RestaurantRepresenter.for_collection.new(restaurants), status: :ok } if restaurants.any?
-                   else
+        else
                      if result[:error].present?
                        render json: { error: result[:error], message: "Restaurant #{result[:restaurant].inspect}, is invalid" }, status: :unprocessable_entity and return
                      else
                        { restaurant: RestaurantRepresenter.new(result[:restaurant]), status: :ok }
                      end
-                   end
+        end
 
         render json: response
       end
